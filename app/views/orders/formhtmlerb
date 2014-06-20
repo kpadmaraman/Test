@@ -1,0 +1,2 @@
+<h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      
