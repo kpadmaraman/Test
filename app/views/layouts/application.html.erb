@@ -12,8 +12,10 @@
  <%= select_tag 'set_locale',options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>
  <%= submit_tag 'submit' %>
  <%= javascript_tag "$('.locale input').hide()" %>
- <% end %>
-<%= image_tag("logo.png") %>
+
+
+<% end %>
+<%= image_tag("logo.jpg") %>
 <%= @page_title || t('.title') %>
 </div>
 <div id="columns">
@@ -25,6 +27,13 @@
 <% end %>
 <% end %>
 </div>
+
+<% Product::CATEGORIES.each do |prodcat| %>
+<ul>
+<li><%= link_to  prodcat, categories_path(category: prodcat) %></li>
+</ul>
+<% end %>
+<br>
 <ul>
 <li><a href="http://localhost:3000/"><%= t('.home') %></a></li>
 <li><a href="http://www.rorguru.com/ruby-on-rails-faq.html"><%= t('.questions') %></a></li>
@@ -34,11 +43,14 @@
 
 <% if session[:user_id] %>
  <ul>
+<br>
  <li><%= link_to 'Orders', orders_path %></li>
  <li><%= link_to 'Products', products_path %></li>
  <li><%= link_to 'Users', users_path %></li>
- </ul>
+<br>
+<br>
  <%= button_to 'Logout', logout_path, method: :delete %>
+ </ul>
  <% end %>
 
 </div>

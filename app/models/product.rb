@@ -1,7 +1,10 @@
 class Product < ActiveRecord::Base
+	CATEGORIES = [ "Electronics", "Home Appliances", "Decor", "Clothing", "Toys", "Babies" ]
+	
 validates :title, :description, :image_url, presence: true
 validates :price, numericality: {greater_than_or_equal_to: 0.01}
 validates :title, uniqueness: true
+validates :category, inclusion: CATEGORIES
 validates :image_url, allow_blank: true, format: {
 with: %r{\.(gif|jpg|png)\Z}i,
 message: 'must be a URL for GIF, JPG or PNG image.'

@@ -1,5 +1,8 @@
 Depot::Application.routes.draw do
+  get "categories/index"
   resources :contacts
+
+ resources :categories
 
  get 'admin' => 'admin#index'
  controller :sessions do

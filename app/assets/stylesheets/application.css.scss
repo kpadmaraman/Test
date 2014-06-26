@@ -19,10 +19,13 @@
  color: #282;
  text-align: center;
 
- img {
- float: left;
+img {
+    height: auto;
+    width: auto;
+    align: left;
+    text-align: center;
 }
- }
+}
 
  #notice {
  color: #000 !important;
@@ -35,7 +38,7 @@
 
  
  #columns {
- background: black;
+ background: white;
  float: left;
 
 #main {
@@ -58,7 +61,7 @@ display: inline;
  input {
  font-size: small;
  }
-
+}
  #cart {
  font-size: smaller;
  color: white;
@@ -84,7 +87,7 @@ table {
 }
 }
 }
-}
+
 
 .depot_form {
 fieldset {
